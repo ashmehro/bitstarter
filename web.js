@@ -6,7 +6,7 @@ filename ="./index.html";
 
 app.get('/', function(request, response) {
   val = fs.readFileSync(filename);
-  Buffer buf = Buffer.write(val, "utf-8");
+  var buf = new Buffer(val);
   response.send(buf.toString('utf-8'));
   //response.send('Hello World2!');
 });
